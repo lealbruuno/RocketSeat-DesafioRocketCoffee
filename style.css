@@ -1,0 +1,238 @@
+/*Váriaveis de cores*/
+:root {
+    --backgrond: #000;
+    --text-color: #FFF;
+    --button: #8257E5;
+    --border: #29292E;
+    --border-menu-mobile: #A8A8B3;
+    --text-color-menu-mobile: #E1E1E6;
+  }
+
+/*Imagem de Fundo Desktop*/
+html {
+  background: url(./assets/blur-1.png) left bottom no-repeat, url(./assets/blur-2.png) right top no-repeat, var(--backgrond);
+}
+
+/*Imagem de Fundo Mobile*/
+@media (max-width: 425.98px) {
+  html {
+    background: #000 url(./assets/blur-mobile.png) no-repeat center bottom/auto;
+  }
+}
+
+* {
+  color: var(--text-color);
+  box-sizing: border-box; /*Delimitar box*/
+  transition: 0.2s; /*Transição ao carregar*/
+}
+
+html {
+  font: normal 16px "Manrope", sans-serif;
+}
+
+/*Descrição Desktop e Mobile*/
+.title, .title--outline {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+/*Descrição Desktop e Mobile Sombra*/
+.title--outline {
+  color: var(--backgrond);
+  /*Sombras ao texto*/
+  text-shadow: -0.0625rem -0.0625rem 0 var(--button), 0.0625rem -0.0625rem 0 var(--button), -0.0625rem 0.0625rem 0 var(--button), 0.0625rem 0.0625rem 0 var(--button);
+}
+
+/*Descrição Mobile*/
+.text {
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+
+/*Botões*/
+.btn--primary {
+  border: none;
+  width: auto;
+}
+
+.btn:hover {
+  cursor: pointer;
+  transition: 0.4s;
+}
+.btn--primary {
+  background: transparent;
+  border: 0.125rem solid var(--button);
+  border-radius: 0.375rem;
+  color: #FFF;
+  font-size: 0.6875rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.6875rem 2.125rem;
+}
+
+.btn--primary:hover {
+  background-color: var(--button);
+}
+
+/*Links*/
+
+.link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/*Link Mobile*/
+.link--arrow {
+  padding-right: 1rem;
+  position: relative;
+}
+
+/*Link Mobile*/
+.link--arrow::before {
+  content: url(./assets/arrow.svg);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.link--white {
+  color: var(--text-color);
+}
+
+.link--white:hover {
+  color: var(--button);
+  transition: 0.4s;
+}
+
+.nav--collapse {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 100%;
+  position: relative;
+}
+
+@media (min-width: 768.98px) {
+  .nav--collapse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.nav--collapse ul.nav--menu {
+  display: none;
+}
+@media (min-width: 768.98px) {
+  .nav--collapse ul.nav--menu {
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
+.header {
+  background: var(--backgrond) url(./assets/logo-mobile.svg) no-repeat 1.5rem center/auto border-box;
+  border-bottom: 1px solid var(--border-menu-mobile);
+  height: 10vh;
+  margin: 0 auto;
+  position: relative;
+}
+.header .logo, .header .btn--primary {
+  display: none;
+}
+
+@media (min-width: 768.98px) {
+  .header {
+    background: transparent;
+    border: none;
+    position: relative;
+  }
+  .header .logo {
+    display: block;
+    left: 18%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .header .btn--burger {
+    display: none;
+  }
+  .header .btn--primary {
+    display: block;
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+@media (min-width: 1900.98px) {
+  .header {
+    max-width: 90%;
+  }
+}
+.main {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  height: 90vh;
+  margin: 0 auto;
+  width: 100%;
+}
+.main__description--desktop {
+  display: none;
+}
+
+.main__description--mobile {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.main__description--mobile .text {
+  text-align: center;
+  width: 80%;
+}
+
+.main .btn--primary {
+  display: block;
+}
+
+.main__image {
+  max-width: 100%;
+}
+
+@media (min-width: 768.98px) {
+  .main {
+    width: 80%;
+  }
+  
+  .main__description--desktop {
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+  }
+  .main__description--mobile {
+    display: none;
+  }
+  .main .btn--primary {
+    display: none;
+  }
+}
+@media (min-width: 1900.98px) {
+  .main {
+    max-width: 90%;
+  }
+}
